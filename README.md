@@ -9,11 +9,11 @@ A small Python script that generates a .txt file of the sizes of your Dropbox fo
 Installation instructions [here](https://www.dropbox.com/developers/core/sdks/python).
 
 2. Dropbox Access Token
-Still new to Dropbox development, so I'm not sure what the proper way of getting an access token is, but the way I did it was by: 
+Still new to Dropbox development, so I'm not sure what the proper way of getting an access token is, but the way I did it was to: 
 
-1. Visiting [Dropbox's Developer site and going to App Console](https://www.dropbox.com/developers/apps).
-2. Create a Dropbox API app with "Files and Datastores", "No", "All file types" options.
-3. Get the app key, visit this [website](https://dbxoauth2.site44.com/) and it will generate an access token for you.
+- Visit [Dropbox's Developer site and go to App Console](https://www.dropbox.com/developers/apps).
+- Create a Dropbox API app with "Files and Datastores", "No", "All file types" options.
+- Get the app key, visit this [website](https://dbxoauth2.site44.com/) and it will generate an access token for you.
 
 ## Usage Instructions
 
@@ -21,7 +21,7 @@ Input your access token into the script.
 
 The script accepts 2 variables:
 
-1. Denominator (non-negative integer). 0 for bytes, 1 for KB, 2 for MB, 3 for GB, etc.
+1. Denomination (non-negative integer). Input 0 to express size in bytes, 1 for KB, 2 for MB, 3 for GB, etc.
 
 2. Levels (non-negative integer). Tells the script how far down the directory tree you want to look. E.g. if set to 1, the script will output the sizes of all your folders in the main Dropbox directory.
 

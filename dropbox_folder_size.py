@@ -3,7 +3,7 @@ import dropbox
 client = dropbox.client.DropboxClient('<INSERT ACCESS TOKEN>')
 
 # choose 0 to express values in bytes, 1 in KB, 2 in MB, 3 in GB.
-denominator = 2
+denomination = 2
 
 # choose how many levels you want to segregate by
 # e.g. if levels is 1, will return folder sizes of folders in Dropbox root
@@ -12,8 +12,8 @@ levels = 2
 
 if (levels == 0):
     quota_info = client.account_info()['quota_info']
-    usage = quota_info['shared'] / (1024.0 ** denominator)
-    quota = quota_info['quota'] / (1024.0 ** denominator)
+    usage = quota_info['shared'] / (1024.0 ** denomination)
+    quota = quota_info['quota'] / (1024.0 ** denomination)
 
     output.write('You are currently using ' + str(usage) + ' out of ' + str(quota) + ' of space on Dropbox.')
     output.close()
@@ -42,16 +42,16 @@ for path, size in sizes.items():
     except KeyError:
         foldersizes[folder] = size
 
-if (denominator != 0):
+if (denomination != 0):
     for path,size in foldersizes.items():
         if size:
-            foldersizes[path] = size / (1024.0 ** denominator)
+            foldersizes[path] = size / (1024.0 ** denomination)
         else:
             del foldersizes[path]
 
 output = open('dropbox_folder_sizes.txt', 'w')
 
-output.write('Below is a list of your largest Dropbox folders, ordered from largest to smallest. You chose a drill level of 2. Sizes are expressed as "%d", where 0 is in bytes, 1 is in KB, 2 is in MB, and 3 is in GB. \n' % denominator)
+output.write('Below is a list of your largest Dropbox folders, ordered from largest to smallest. You chose a drill level of 2. Sizes are expressed as "%d", where 0 is in bytes, 1 is in KB, 2 is in MB, and 3 is in GB. \n' % denomination)
 
 for folder in reversed(sorted(foldersizes.keys(), key=lambda x: foldersizes[x])):
     output.write('%s: %f' % (folder, foldersizes[folder]) + '\n')
