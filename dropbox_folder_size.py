@@ -56,5 +56,7 @@ output.write('Below is a list of your largest Dropbox folders, ordered from larg
 for folder in reversed(sorted(foldersizes.keys(), key=lambda x: foldersizes[x])):
     output.write('%s: %f' % (folder, foldersizes[folder]) + '\n')
 
+print "File dropbox_folder_sizes.txt successfully created in the same directory as this script!"
+
 output.close()
 quit()
