@@ -3,8 +3,7 @@ Dropbox-Folder-Size
 
 A small Python script that generates a .txt file of the sizes of your Dropbox folders. Perfect for checking the sizes of folders that you have selectively unsync-ed.
 
-# Script Requirements
-===================
+## Script Requirements
 
 1. Python SDK
 Installation instructions [here](https://www.dropbox.com/developers/core/sdks/python).
@@ -16,7 +15,7 @@ Still new to Dropbox development, so I'm not sure what the proper way of getting
 2. Create a Dropbox API app with "Files and Datastores", "No", "All file types" options.
 3. Get the app key, visit this [website](https://dbxoauth2.site44.com/) and it will generate an access token for you.
 
-# Usage Instructions
+## Usage Instructions
 
 Input your access token into the script.
 
@@ -26,11 +25,11 @@ The script accepts 2 variables:
 
 2. Levels (non-negative integer). Tells the script how far down the directory tree you want to look. E.g. if set to 1, the script will output the sizes of all your folders in the main Dropbox directory.
 
-# Known Bugs
+## Known Bugs
 
 1. Dropbox still thinks .pages documents are folders. I might or might not get around to fixing this.
 
-# Possible Features
+## Possible Features
 
 1. Make this script a full-fledged app, with browser redirection for OAuth authentication and stuff.
 2. Add support to run script in sub-folders.
