@@ -8,7 +8,7 @@ A small Python script that generates a .txt file of the sizes of your Dropbox fo
 1. Python SDK
 Installation instructions [here](https://www.dropbox.com/developers/core/sdks/python).
 
-2. Dropbox Access Token
+2. Dropbox Access Token. 
 Still new to Dropbox development, so I'm not sure what the proper way of getting an access token is, but the way I did it was to: 
 
 - Visit [Dropbox's Developer site and go to App Console](https://www.dropbox.com/developers/apps).
