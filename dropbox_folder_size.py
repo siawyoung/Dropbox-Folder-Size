@@ -54,7 +54,7 @@ output = open('dropbox_folder_sizes.txt', 'w')
 output.write('Below is a list of your largest Dropbox folders, ordered from largest to smallest. You chose a drill level of 2. Sizes are expressed as "%d", where 0 is in bytes, 1 is in KB, 2 is in MB, and 3 is in GB. \n' % denomination)
 
 for folder in reversed(sorted(foldersizes.keys(), key=lambda x: foldersizes[x])):
-    output.write('%s: %f' % (folder, foldersizes[folder]) + '\n')
+    output.write('%s: %f' % (folder.encode('utf-8'), foldersizes[folder]) + '\n')
 
 print "File dropbox_folder_sizes.txt successfully created in the same directory as this script!"
 
