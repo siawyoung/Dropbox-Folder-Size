@@ -10,6 +10,8 @@ denomination = 2
 # If you just want to know overall usage of account (i.e. levels = 0), we will run a separate query for it
 levels = 2
 
+output = open('dropbox_folder_sizes.txt', 'w')
+
 if (levels == 0):
     quota_info = client.account_info()['quota_info']
     usage = quota_info['shared'] / (1024.0 ** denomination)
@@ -48,8 +50,6 @@ if (denomination != 0):
             foldersizes[path] = size / (1024.0 ** denomination)
         else:
             del foldersizes[path]
-
-output = open('dropbox_folder_sizes.txt', 'w')
 
 output.write('Below is a list of your largest Dropbox folders, ordered from largest to smallest. You chose a drill level of 2. Sizes are expressed as "%d", where 0 is in bytes, 1 is in KB, 2 is in MB, and 3 is in GB. \n' % denomination)
 
